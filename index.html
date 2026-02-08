@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dla Nicoli ❤️</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: radial-gradient(circle at top, #7b1e3c, #2b0a17);
+      color: #fff;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .center {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 6vw, 4rem);
+      margin-bottom: 20px;
+      animation: fadeIn 1.5s ease;
+    }
+
+    p {
+      font-size: 1.2rem;
+      max-width: 650px;
+      opacity: 0.9;
+      animation: fadeIn 2s ease;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      margin: 10px;
+      padding: 16px 38px;
+      border: none;
+      border-radius: 50px;
+      background: linear-gradient(135deg, #ff4d6d, #ff8fab);
+      color: #fff;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- EKRAN 1 -->
+<div class="center" id="start">
+  <h1>Mam do Ciebie pytanie… 💌</h1>
+  <p>Czy chcesz wiedzieć?</p>
+  <button class="btn" onclick="openLove()">Tak</button>
+</div>
+
+<!-- EKRAN 2 -->
+<div class="center hidden" id="love">
+  <h1>Chciałabyś zostać moją Walentynką? 💖</h1>
+  <div>
+    <button class="btn" onclick="playMusic()">Tak</button>
+    <button class="btn" onclick="noAction(this)">Nie</button>
+  </div>
+</div>
+
+<script>
+  function openLove() {
+    document.getElementById('start').classList.add('hidden');
+    document.getElementById('love').classList.remove('hidden');
+  }
+
+  function noAction(btn) {
+    btn.style.display = 'none'; // przycisk 'Nie' znika
+  }
+
+  function playMusic() {
+    // Otwiera Spotify z wybraną piosenką
+    window.location.href = 'https://open.spotify.com/track/2CJoMNzcvbpV38fKqAOaQ3?si=1bf2ade2468d4c0a';
+  }
+</script>
+
+</body>
+</html>
